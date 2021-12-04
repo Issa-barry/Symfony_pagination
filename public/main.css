@@ -1,0 +1,33 @@
+body{
+     
+}
+*{
+    list-style-type: none;
+}
+
+.pagination{
+     width: 100%;
+     
+}
+.pagination ul{
+    display: flex;
+    width: 100%;
+}
+.pagination ul li 
+{
+    margin-left: 10px;
+   
+}
+.pagination a{
+    text-decoration: none;
+    color: rgb(7, 7, 26);
+}
+.pagination .active
+{
+    background-color: rgb(51, 95, 236);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    color: white;
+    text-align: center;
+}
