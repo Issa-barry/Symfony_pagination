@@ -27,7 +27,8 @@
 
      {# Ici la pagination #}
       <div class="navigation d-block p-2 ">
-        {{ knp_pagination_render(articles) }}
+         {% do articles.setPageRange(3) %} {# Le nombre de numero de page qui s'affiche sur une page #}
+        {{ knp_pagination_render(articles, 'base/pagination.html.twig') }}
       </div> 
   </div>  
  
