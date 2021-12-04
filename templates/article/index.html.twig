@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h2>Liste de vos articles !</h1>
+
+     <div class="card mb-3">
+      
+     {% for article in articles %}
+       <div class="card-body">
+        <h3 class="card-title">{{article.id}} :{{article.title}}</h5>
+        <p> {{article.description}}  </p>
+        <p class="card-text"><small class="text-muted">Last updated {{ article.updatedAt |date("m/d/Y à H:i") }}</small></p>
+      </div> 
+      <hr/>
+      {# Si on na pas d'article #}
+        {% else %}
+         <p class="text-center"> Vous n'avez pas de tâche pour le moment </p>  
+     {% endfor %}
+
+     {# Ici la pagination #}
+      <div class="navigation d-block p-2 ">
+        {{ knp_pagination_render(articles) }}
+      </div> 
+  </div>  
+ 
+</div>
+{% endblock %}
